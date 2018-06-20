@@ -1,0 +1,385 @@
+{
+	"id": "88d4fd0d-9707-ffc3-b04e-e931eb4cebc0",
+	"name": "Chat API",
+	"description": "Laravel chat test",
+	"order": [
+		"95ed212e-33cc-bf77-011a-ddea53df66d6",
+		"89cc1b16-6d86-1667-3546-aa1d9dfe1bf1",
+		"be04673e-672b-33eb-c973-2a200d9379d4",
+		"eefb4599-4238-6081-d80b-c7769317c506",
+		"5c43f7f3-4c4d-22ca-45ab-9b8aeec9414c",
+		"c3ea5cf6-94fd-d15b-c49f-a2276eeb4121",
+		"98e61a8a-ff78-d9ba-e848-ba38af437022",
+		"0257ec06-e1d4-cb38-d2b1-fffcc2e9e7e3"
+	],
+	"folders": [],
+	"folders_order": [],
+	"timestamp": 1529522544943,
+	"owner": "471883",
+	"public": false,
+	"requests": [
+		{
+			"id": "0257ec06-e1d4-cb38-d2b1-fffcc2e9e7e3",
+			"headers": "Accept: application/json\nContent-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Accept",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://{{host}}/api/sign-out",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "DELETE",
+			"data": [],
+			"dataMode": "params",
+			"version": 2,
+			"tests": "var jsonData = pm.response.json();\npm.globals.set(\"bearerToken\", jsonData.data.api_token);",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1529537063351,
+			"name": "signOut",
+			"description": "",
+			"collectionId": "88d4fd0d-9707-ffc3-b04e-e931eb4cebc0",
+			"responses": []
+		},
+		{
+			"id": "5c43f7f3-4c4d-22ca-45ab-9b8aeec9414c",
+			"headers": "Accept: application/json\ncontent: application/json\n",
+			"headerData": [
+				{
+					"key": "Accept",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "content",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://{{host}}/api/rooms/52?name=New Room 1 name&description=New Room 1 description",
+			"queryParams": [
+				{
+					"key": "name",
+					"value": "New Room 1 name",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "description",
+					"value": "New Room 1 description",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				}
+			],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "PUT",
+			"data": null,
+			"dataMode": "params",
+			"tests": null,
+			"currentHelper": "bearerAuth",
+			"helperAttributes": {
+				"token": "{{bearerToken}}"
+			},
+			"time": 1529527966591,
+			"name": "updateRoom",
+			"description": "",
+			"collectionId": "88d4fd0d-9707-ffc3-b04e-e931eb4cebc0",
+			"responses": []
+		},
+		{
+			"id": "89cc1b16-6d86-1667-3546-aa1d9dfe1bf1",
+			"headers": "Accept: application/json\ncontent: application/json\n",
+			"headerData": [
+				{
+					"key": "Accept",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "content",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://{{host}}/api/rooms/524",
+			"folder": null,
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"version": 2,
+			"tests": "",
+			"currentHelper": "bearerAuth",
+			"helperAttributes": {
+				"token": "{{bearerToken}}"
+			},
+			"time": 1529527941348,
+			"name": "getOneRoom",
+			"description": null,
+			"collectionId": "88d4fd0d-9707-ffc3-b04e-e931eb4cebc0",
+			"responses": []
+		},
+		{
+			"id": "95ed212e-33cc-bf77-011a-ddea53df66d6",
+			"headers": "Accept: application/json\ncontent: application/json\n",
+			"headerData": [
+				{
+					"key": "Accept",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "content",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://{{host}}/api/rooms",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"version": 2,
+			"tests": "pm.test(\"getRooms Test Status code is 200\", function(){\n   pm.response.to.have.status(200); \n});",
+			"currentHelper": "bearerAuth",
+			"helperAttributes": {
+				"token": "{{bearerToken}}"
+			},
+			"time": 1529528338914,
+			"name": "getRooms",
+			"description": "",
+			"collectionId": "88d4fd0d-9707-ffc3-b04e-e931eb4cebc0",
+			"responses": []
+		},
+		{
+			"id": "98e61a8a-ff78-d9ba-e848-ba38af437022",
+			"headers": "Accept: application/json\nContent-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Accept",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://{{host}}/api/sign-in",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [
+				{
+					"key": "email",
+					"value": "alex.syntek@test.com",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "password",
+					"value": "asd123.",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"version": 2,
+			"tests": "var jsonData = pm.response.json();\npm.globals.set(\"bearerToken\", jsonData.data.api_token);",
+			"currentHelper": "bearerAuth",
+			"helperAttributes": {
+				"token": ""
+			},
+			"time": 1529535118574,
+			"name": "signIn",
+			"description": "",
+			"collectionId": "88d4fd0d-9707-ffc3-b04e-e931eb4cebc0",
+			"responses": []
+		},
+		{
+			"id": "be04673e-672b-33eb-c973-2a200d9379d4",
+			"headers": "Accept: application/json\ncontent: application/json\n",
+			"headerData": [
+				{
+					"key": "Accept",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "content",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://{{host}}/api/rooms?name=Room 1&description=Room description text",
+			"queryParams": [
+				{
+					"key": "name",
+					"value": "Room 1",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "description",
+					"value": "Room description text",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				}
+			],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": null,
+			"dataMode": "params",
+			"tests": null,
+			"currentHelper": "bearerAuth",
+			"helperAttributes": {
+				"token": "{{bearerToken}}"
+			},
+			"time": 1529527951033,
+			"name": "createRoom",
+			"description": "",
+			"collectionId": "88d4fd0d-9707-ffc3-b04e-e931eb4cebc0",
+			"responses": []
+		},
+		{
+			"id": "c3ea5cf6-94fd-d15b-c49f-a2276eeb4121",
+			"headers": "Accept: application/json\nContent-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Accept",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://{{host}}/api/sign-up",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [
+				{
+					"key": "name",
+					"value": "Alex2",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "email",
+					"value": "alex.syntek2@test.com",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "password",
+					"value": "asd123.",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "password_confirmation",
+					"value": "asd123.",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1529537073875,
+			"name": "signUp",
+			"description": "",
+			"collectionId": "88d4fd0d-9707-ffc3-b04e-e931eb4cebc0",
+			"responses": []
+		},
+		{
+			"id": "eefb4599-4238-6081-d80b-c7769317c506",
+			"headers": "Accept: application/json\ncontent: application/json\n",
+			"headerData": [
+				{
+					"key": "Accept",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "content",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://{{host}}/api/rooms/51",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "DELETE",
+			"data": null,
+			"dataMode": "params",
+			"tests": null,
+			"currentHelper": "bearerAuth",
+			"helperAttributes": {
+				"token": "{{bearerToken}}"
+			},
+			"time": 1529527960463,
+			"name": "deleteRoom",
+			"description": "",
+			"collectionId": "88d4fd0d-9707-ffc3-b04e-e931eb4cebc0",
+			"responses": []
+		}
+	]
+}
