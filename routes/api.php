@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Http\Request;
-
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -13,6 +12,12 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
+//Route::middleware('auth:api')->get('/user', function (Request $request) {
+//    return $request->user();
+//});
+
+Route::get('rooms', 'RoomController@all');
+Route::get('rooms/{room}', 'RoomController@one');
+Route::post('rooms', 'RoomController@create');
+Route::put('rooms/{room}', 'RoomController@update');
+Route::delete('rooms/{room}', 'RoomController@delete');
